@@ -27,10 +27,10 @@ function setup() {
    
    
    rope1 = new Rope(roof1.body,bob1.body,-180,0);
-   rope2 = new Rope(roof1.body,bob2.body,-180,0);
-   rope3 = new Rope(roof1.body,bob3.body,-180,0);
-   rope4 = new Rope(roof1.body,bob4.body,-180,0);
-   rope5 = new Rope(roof1.body,bob5.body,-180,0);
+   rope2 = new Rope(roof1.body,bob2.body,-90,0);
+   rope3 = new Rope(roof1.body,bob3.body,0,0);
+   rope4 = new Rope(roof1.body,bob4.body,90,0);
+   rope5 = new Rope(roof1.body,bob5.body,180,0);
 
 
 	Engine.run(engine);
@@ -60,5 +60,9 @@ function draw() {
  
 }
 
-
+function keyPressed(){
+	if(keyCode == UP_ARROW){
+		Matter.Body.applyForce(bob1.body, bob1.body.position, {x:-200,y:-75})
+	}
+}
 
